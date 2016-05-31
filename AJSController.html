@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html ng-app="demoApp">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>Angular's Controllers</title>
+    <link rel="stylesheet" href="AjsIntroStyles.css">
+    <script src="AJSController.js" charset="utf-8"></script>
+</head>
+
+<body>
+    <div ng-controller="simpleController">
+        Name:
+        <br />
+        <input type="text" ng-model="name" />
+        <br>
+        <ul>
+            <li ng-repeat="cust in customers | filter:name | orderBy: 'city'">
+                {{cust.name}} - {{cust.city}}
+            </li>
+        </ul>
+    </div>
+    <div>
+        <h3>Module</h3>
+        <p>
+            <b>Modules are CONTAINERS that holds pieces of application code</b>
+        </p>
+        <img src="BigPicture.png" alt="" width="500px" height="400px">
+
+        <img src="Modules.png" alt="" width="500px" height="400px">
+        <p>
+            Img1: Is the big Picture Img2: is bit refined view of module
+        </p>
+    </div>
+    <div>
+        <h3>How to create a Module and a Controller?</h3>
+        <img src="CreatingModule.png" alt="" width="500px" height="400px">
+
+        <img src="creatingCOntrollerModule.png" alt="" width="500px" height="400px">
+
+    </div>
+
+    <div ng-controller="personController as list">
+      <h1> {{  list.person.name}}</h1>
+<h2> {{list.person.occupation}}</h2>
+<h3> {{list.person.status}}</h3>
+
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+
+    <script>
+        var demoApp = angular.module('demoApp', []);
+
+        function simpleController($scope) {
+            $scope.customers = [{
+                name: 'john',
+                city: 'usa'
+            }, {
+                name: 'robert',
+                city: 'mexico'
+            }, {
+                name: 'braveHeart',
+                city: 'scotland'
+            }, {
+                name: 'roberto',
+                city: 'mexico'
+            }];
+        }
+        demoApp.controller('simpleController', simpleController)
+
+    </script>
+</body>
+
+</html>

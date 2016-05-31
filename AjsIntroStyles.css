@@ -10,3 +10,7 @@ div{
   padding: 10px;
   background-color: lightyellow;
 }
+img{
+  display: inline-block;
+  margin: 10px;
+}
