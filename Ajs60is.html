@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html ng-app="">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>My Angular KickOff</title>
+    <link rel="stylesheet" href="AjsIntroStyles.css">
+</head>
+
+<body ng-init="customers=[{name:'john', city:'usa'},{name:'robert',city:'mexico'},{name:'braveHeart',city:'scotland'},{name:'roberto',city:'mexico'}]">
+    <!-- declared a angular variable using NG-INIT -->
+    Name:
+    <br />
+    <input type="text" ng-model="name">
+    <!-- ng model binds the input box to varaibale "name" -->
+    <br />
+    <ul><li ng-repeat="cust in customers | filter:name | orderBy: 'city'">{{cust.name}} - {{cust.city}}</li></ul>
+
+
+
+
+<div>
+    <h3>Directives: Very important concept. </h3>
+
+    <p>At a high level, directives are
+        <br />
+        <br />
+
+        <b>1. markers on a DOM element</b> (such as an attribute, element name, comment or CSS class) that tell AngularJS's HTML compiler ($compile)
+        <br />
+        <br />
+
+        <b>2. to attach a specified behavior to that DOM element (e.g. via event listeners)</b>
+        <br />
+        <br /> Angular comes with a set of these directives built-in, like ngBind, ngModel, and ngClass</p>
+
+    <h4>Some Important and commmon Directives</h4>
+    <ul>
+        <li><b>ng-app</b> directive tells AngularJS that the a HTML element is the "owner" of an AngularJS application.</li>
+        <li><b>ng-model = "name" </b>directive binds the value of the a field to the application variable "name"</li>
+        <li><b>ng-bind</b> " p tag ng-bind = "name"/p tag directive binds the innerHTML of the p tag element to the application variable name."</li>
+        <li><b>ng-init</b>The ng-init directive initializes AngularJS application variables. Just like JS var a = 2</li>
+        <li>The <b>ng-repeat </b>directive repeats a set of HTML, a given number of times.The set of HTML will be repeated once per item in a collection.The collection must be an array or an object.</li>
+    </ul>
+
+    </div>
+
+    <div>
+
+    <h3>AngularJS Expressions</h3>
+    <p>AngularJS expressions are written inside double braces: expression in two sets of curley braces. AngularJS will <b>"output" data exactly where the expression is written</b></p>
+    <p>AngularJS expressions bind AngularJS data to HTML the same way as the ng-bind directive.</p>
+
+    </div>
+
+<div>
+    <h3>Filters</h3>
+    <p>
+      There are built in filter like upperCase, lowerCase, OrderBy etc.
+    </p>
+    <p>Similiar to directives, we can make our own custom filters</p>
+    body ng-init="customers=[{name:'john', city:'usa'},{name:'robert',city:'mexico'},{name:'braveHeart',city:'scotland'},{name:'roberto',city:'mexico'}]"
+    <b>ng-init</b> is declaring angular variable called customers
+
+    ng-repeat="cust in customers | filter:name | orderBy: 'city'" {{cust.name | uppercase }} - {{cust.city | lowercase }}
+
+    <ul>
+      <li>cust is the variable in ng-repeat </li>
+      <li>| is called pipe that is used for filtering</li>
+      <li>pipe filter by Name and pipe order by city</li>
+    </ul>
+    </div>
+
+    <div>
+
+    <h3>Scope</h3>
+    Scope is the glue (viewModel) between controller and view
+
+    </div>
+
+    <div>
+      <h3>Controllers</h3>
+
+      AngularJS applications are controlled by controllers.
+
+    <b>The ng-controller directive defines the application controller.</b>
+    <br>
+    <br>
+
+      A controller is a JavaScript Object, created by a standard JavaScript object constructor.
+
+    </div>
+
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+</body>
+
+</html>
