@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="angularIntro">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>Angular Class Intro</title>
+</head>
+
+<body>
+    <main ng-controller='firstController'>
+
+        <h1>{{test}}</h1>
+        <h1>{{firstName}}</h1>
+        <h1>{{lastName}}</h1>
+        <button ng-click="alertMessage()">Click Me</button>
+
+        <div ng-repeat='list in greetings'>
+            <h1>{{list}}</h1>
+        </div>
+
+        <br>
+        <br>
+
+        <input type="text" placeholder="Search Name" ng-model="filterName">{{filterName}}
+
+        <div ng-repeat='person in people | filter:filterName'>
+          <!-- filtering everything -->
+          <!-- but add properties ng-modle="fillterName.city" ==> this will filter just the city items-->
+          <!-- <h1 ng-show="person.isNew">Thanks for visiting our site</h1>
+          <h1 ng-hide="person.isNew">Hey{{person.name}}Thanks for visiting our site</h1> -->
+            <h1>{{person.name}}</h1>
+            <h1>{{person.age}}</h1>
+            <h1>{{person.email}}</h1>
+
+        </div>
+
+
+    </main>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+    <script src="app.js" charset="utf-8"></script>
+    <script src="firstController.js" charset="utf-8"></script>
+</body>
+
+</html>

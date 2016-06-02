@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="simpleSite">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <title>MyOwn</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body ng-controller ="siteController">
+  <h1>My Name: {{test}}</h1>
+  <h3>This is head of the Article i wrote</h3>
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam omnis id quasi, dolores praesentium deleniti cupiditate. A vero id veniam voluptatem, consequuntur consectetur iusto expedita est minus rem voluptatum excepturi!</p>
+<br>
+  <p>Maxime architecto itaque doloribus similique facere aliquid porro aperiam tempore! Magnam necessitatibus vero at ex reprehenderit quia itaque illum eius laborum labore enim, iure commodi iste atque, delectus ducimus libero!</p>
+<br>
+  <p>Eos illo ex sint saepe nobis, error optio aliquid eius eum ut, neque dolorem, rerum distinctio cum veritatis repellendus? Praesentium ab, facilis minima consequatur quia autem minus? Odio perferendis, doloremque?</p>
+<br>
+  <p>Officia nemo dicta fuga itaque porro numquam architecto, vitae repellendus, voluptas accusantium minus? Voluptatibus incidunt obcaecati ratione deserunt soluta nulla ex quis assumenda, sequi tempore voluptate voluptates iusto temporibus voluptatem.</p>
+<br />
+<p>This is great article. thanks for posting. Most amazing Lorem Ipsum ever.</p>
+<br />
+<br>
+<h5>Please comment</h5>
+
+<!-- <div ng-repeat="comm in commentsArray">
+<p> {{comm}} </p>
+</div> -->
+<!-- <textarea name="name" rows="4" cols="80" placeholder="Please provide your feedback"ng-model="addComments"></textarea> {{addComments}}
+<br>
+<button ng-click="commentFunc()">Submit</button> -->
+<!-- box to leave comments what do i need?  1) textarea 2) modle to databind
+3) an array that stores the comments to diplay on html i.e scope my array to html
+4) button linked to function which will push the comments to store in arrary
+-->
+<textarea name="name" rows="4" cols="90" placeholder="Please leave your feedback" ng-model="bindComments"></textarea>
+<br>
+<br>
+<button type="button" name="button" ng-click="myfunction()">Submit</button>
+<br>
+<br>
+
+<div ng-repeat="comments in orderdComments">
+  <p>{{comments}}</p>
+</div>
+
+
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
+<script src="app.js" charset="utf-8"></script>
+<script src="mainCrtl.js" charset="utf-8"></script>
+</body>
+</html>
