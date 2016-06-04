@@ -1,7 +1,7 @@
 angular.module("simpleSite",[]);
 
 /*
-creating a module. 
+creating a module.
 
 angular.module("store",[]);
 angular.module create a module. Name of the module, which is aka application name, is store

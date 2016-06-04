@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="appName">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>AngularRedos</title>
+    <link rel="stylesheet" href="styles.css" media="screen" title="no title" charset="utf-8">
+</head>
+
+<body ng-controller="mainCtrl">
+    <p>Is Angular controller working: {{test}}</p>
+    <h1>“Practice doesn't make perfect.Practice reduces the imperfection.” </h1>
+
+    <div class="dataPoint">
+        <!--  How to capture the data in the DataPoint Div. They have boxes? how to capture the data written in the boxes and dosomething with it?
+NG_MODEL = DATA BINDS
+    -->
+        <span>Name:</span>
+        <span><input type="text" placeholder="enter your name" ng-model="member"></span>
+        <br>
+        <br>
+        <span>Nice Score:</span>
+        <span><input type="text" placeholder="enter your nice score for the day" ng-model="niceScore"></span>
+        <br>
+        <br>
+        <span>Naught Score:</span>
+        <span><input type="text" placeholder="enter your naught score for the day" ng-model="naughtyScore"></span>
+        <br>
+        <br>
+        <!--  when i hit the button something should happen. How should i link my button to a verb? function-->
+        <button type="button" name="button" ng-click="getPersons()">Submit</button>
+    </div>
+    <!-- Now that we have the list, empty array is being filled with names in controller. These name should be linked to view
+how to link controller to the view ..> via the scope.
+    -->
+    <h3>Santa's Nice List</h3>
+    <div ng-repeat="person in niceList">
+        {{person.name}}
+    </div>
+
+    <h3>Santa's Naughty List</h3>
+    <div ng-repeat="person in naughtyList">
+        {{person.name}}
+    </div>
+
+
+
+
+
+
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
+    <script src="./scripts/app.js" charset="utf-8"></script>
+    <script src="./scripts/dataServices.js" charset="utf-8"></script>
+    <script src="./scripts/mainCrtl.js" charset="utf-8"></script>
+</body>
+
+</html>
